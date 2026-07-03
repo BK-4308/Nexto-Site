@@ -50,10 +50,10 @@ export const footerData = {
     {
       title: '연락처',
       links: [
-        { text: '서울특별시 송파구 송파대로28길 12, 607호', href: '#' },
-        { text: '(가락동, 밀리아나 1차)', href: '#' },
+        { text: '서울특별시 송파구 송파대로28길 12, 607호' },
+        { text: '(가락동, 밀리아나 1차)' },
         { text: 'Tel. 02-404-3350', href: 'tel:02-404-3350' },
-        { text: 'Fax. 02-404-3351', href: '#' },
+        { text: 'Fax. 02-404-3351' },
         { text: 'gbgyu@naver.com', href: 'mailto:gbgyu@naver.com' },
       ],
     },

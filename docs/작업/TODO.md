@@ -5,13 +5,22 @@
 
 ---
 
-## ▶ 세션 재시작 후 여기서 이어서 (2026-07-03)
+## ▶ 다음 세션 여기서 시작 — "바뀐 디자인 확인부터" (2026-07-03)
 
-**현재 상태**
-- 배포처 확정: **Cloudflare Pages** / 문의 폼: **Web3Forms**(env `PUBLIC_WEB3FORMS_KEY`). 상세 → [06_배포.md](../설계/06_배포.md)
-- **git init 완료(`main` 브랜치)**. `.env` 등 민감파일 없음 확인. `.gitignore` OK.
-- [x] **원격 연결·첫 커밋·push 완료 (2026-07-03)** — HTTPS+PAT(osxkeychain, user BK-4308)로 push. `origin/main` 추적 설정됨.
-- GitHub 저장소: `https://github.com/BK-4308/Nexto-Site.git`
+> **가장 먼저 할 일: 리디자인된 홈 상단을 눈으로 확인.**
+> 1. 개발 서버 실행: `npm run dev`
+> 2. 브라우저에서 **http://localhost:4321/** 접속
+> 3. **홈 Hero + "핵심 사업 영역" 2개 섹션**이 새 프리미엄 디자인(다크·담대·테크)으로 바뀜 — 이 톤 확인.
+>    - 그 아래 섹션들(적용분야·소개·도입단계·통계·사례·소식·CTA)과 다른 페이지는 **아직 기존 AstroWind 스타일** → 톤 불일치는 정상.
+> 4. 확인 후: **홈 나머지 섹션 → 전 페이지로 같은 디자인 언어 확산** (아래 "🎨 디자인 전면 개편" 섹션 체크리스트대로).
+>
+> 새 커스텀 컴포넌트 위치: `src/components/nexto/` (`Hero.astro`, `Services.astro`). 디자인 방향/토큰은 메모리 [[nexto-site-direction]] 참조.
+> 최신 커밋: `4971f7e` (리디자인 착수). 원격 `origin/main` 최신.
+
+**현재 상태 (완료된 것)**
+- 배포처: **Cloudflare Pages** / 문의 폼: **Web3Forms**(env `PUBLIC_WEB3FORMS_KEY`, 무료=클라이언트 제출만) — **실제 메일 수신 확인됨**. 수신 이메일 **admin@nexto.co.kr**(사이트 표기도 통일). 로컬 `.env`에 키 등록됨(커밋 제외).
+- **git 원격·push 완료**, `origin/main` 추적. GitHub `https://github.com/BK-4308/Nexto-Site.git`.
+- 이미지(산업/플랜트 로컬화)·OG/favicon(넥스투 브랜딩)·접근성(theme-color/skip-link)·한글 줄바꿈(break-keep) 완료.
 - ⚠️ **CI 워크플로 커밋 보류**: keychain PAT에 `workflow` 스코프 없어 `.github/workflows/actions.yaml` push 거부됨 → `.gitignore`에 `.github/workflows/` 추가하고 커밋에서 제외(**파일은 로컬 유지**). 재추가하려면: (a) PAT에 workflow 스코프 부여 후 `.gitignore`에서 해당 줄 제거→커밋, 또는 (b) GitHub 웹UI에서 직접 워크플로 추가(웹은 스코프 무관). 배포는 Cloudflare Pages 자체 빌드라 기능 영향 없음.
 - ℹ️ `.claude/settings.local.json`도 머신 로컬 설정이라 `.gitignore` 처리(커밋 제외).
 

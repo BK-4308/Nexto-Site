@@ -54,12 +54,12 @@ export const footerData = {
         { text: '(가락동, 밀리아나 1차)' },
         { text: 'Tel. 02-404-3350', href: 'tel:02-404-3350' },
         { text: 'Fax. 02-404-3351' },
-        { text: 'gbgyu@naver.com', href: 'mailto:gbgyu@naver.com' },
+        { text: 'admin@nexto.co.kr', href: 'mailto:admin@nexto.co.kr' },
       ],
     },
   ],
   secondaryLinks: [],
-  socialLinks: [{ ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:gbgyu@naver.com' }],
+  socialLinks: [{ ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:admin@nexto.co.kr' }],
   footNote: `
     © ${new Date().getFullYear()} 주식회사 넥스투 (NEXTO). All rights reserved.
   `,

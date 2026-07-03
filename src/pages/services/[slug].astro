@@ -1,0 +1,81 @@
+---
+/**
+ * 서비스 상세 페이지 (데이터 주도)
+ * -------------------------------------------------------------
+ * src/data/services.ts 의 각 항목을 /services/{slug} 로 렌더한다.
+ * 섹션 구성: Hero → 접근(문제+단계) → 주요 범위 → 기대 효과 → CTA
+ */
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { services, type ServiceDetail } from '~/data/services';
+
+/** 정적 경로 생성: services 데이터의 slug마다 페이지 1개 */
+export async function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+interface Props {
+  service: ServiceDetail;
+}
+const { service } = Astro.props;
+
+const metadata = {
+  title: `${service.title} — 서비스`,
+  description: service.summary,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero ******************* -->
+  <Hero
+    tagline="Services"
+    title={service.title}
+    subtitle={service.intro}
+    actions={[{ variant: 'primary', text: '문의하기', href: '/contact', icon: 'tabler:mail' }]}
+    image={{ src: service.image, alt: service.title }}
+  />
+
+  <!-- 접근: 문제 정의(subtitle) + 진행 단계(items) ******* -->
+  <Steps
+    tagline="Approach"
+    title="넥스투는 이렇게 진행합니다"
+    subtitle={service.problem}
+    items={service.approach.map((step) => ({
+      title: step.title,
+      description: step.description,
+      icon: 'tabler:arrow-badge-right',
+    }))}
+    image={{ src: service.image, alt: service.title }}
+  />
+
+  <!-- 주요 범위 ******************* -->
+  <Features2
+    tagline="Scope"
+    title="주요 범위"
+    subtitle="넥스투가 제공하는 핵심 항목입니다."
+    columns={2}
+    items={service.scope.map((s) => ({ title: s, icon: 'tabler:point-filled' }))}
+  />
+
+  <!-- 기대 효과 ******************* -->
+  <Features
+    tagline="Benefits"
+    title="기대 효과"
+    columns={4}
+    items={service.effects.map((e) => ({ title: e, icon: 'tabler:circle-check' }))}
+  />
+
+  <!-- CTA ******************* -->
+  <CallToAction
+    actions={[{ variant: 'primary', text: '문의하기', href: '/contact', icon: 'tabler:mail' }]}
+    title="이 서비스가 필요하신가요?"
+    subtitle="현장 진단부터 구축까지, 넥스투가 함께 고민하겠습니다."
+  />
+</Layout>

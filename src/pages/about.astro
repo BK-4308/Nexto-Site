@@ -1,0 +1,120 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '회사소개',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero ******************* -->
+  <Hero
+    tagline="About us"
+    image={{
+      src: 'https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=2070&q=80',
+      alt: '넥스투 자동화 현장',
+    }}
+  >
+    <Fragment slot="title">
+      제조 혁신의 <br />
+      <span class="text-accent dark:text-white">가장 가까운 파트너</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      주식회사 넥스투는 산업 자동화, MES, 스마트 팩토리, AI 기술을 바탕으로 제조 현장의 생산성과 품질 향상을 지원하는
+      자동화 시스템 전문 기업입니다. "WE ARE ALWAYS NEXT TO YOU" — 언제나 고객 곁에서 함께합니다.
+    </Fragment>
+  </Hero>
+
+  <!-- Stats ****************** -->
+  <Stats
+    title="넥스투의 발자취"
+    stats={[
+      { title: '년 자동화 노하우', amount: '10+' },
+      { title: '프로젝트 수행', amount: '100+' },
+      { title: '핵심 기술 분야', amount: '4' },
+      { title: '고객사', amount: '15' },
+    ]}
+  />
+
+  <!-- 핵심 역량 ************** -->
+  <Features3
+    title="핵심 역량"
+    subtitle="자동화부터 데이터·AI까지, 제조 현장에 필요한 기술을 통합 제공합니다."
+    columns={2}
+    isBeforeContent={true}
+    items={[
+      {
+        title: '산업 자동화',
+        description: 'PLC·모션 제어, 머신비전 검사, 로봇 연동까지 현장 맞춤형 설비 자동화를 설계·구축합니다.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'MES',
+        description: '작업 지시부터 실적 집계까지 생산 전 과정을 디지털화하여 현장과 경영을 연결합니다.',
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: '스마트 팩토리',
+        description: '설비 IoT·공정 데이터 수집과 통합 모니터링으로 지능형 공장을 단계적으로 구축합니다.',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: 'AI 솔루션',
+        description: '딥러닝 검사, 설비 예지보전, 공정 최적화로 제조 의사결정을 고도화합니다.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+  />
+
+  <!-- 가치 ****************** -->
+  <Steps2
+    title="우리의 가치"
+    subtitle="넥스투가 일하는 방식입니다."
+    items={[
+      {
+        title: '고객 중심',
+        description: '현장의 문제에서 출발해, 고객에게 실질적인 효과를 주는 해법을 제안합니다.',
+      },
+      {
+        title: '검증된 기술',
+        description: '실증 가능한 기술만을 적용해 안정적이고 신뢰할 수 있는 시스템을 만듭니다.',
+      },
+      {
+        title: '단계적 혁신',
+        description: '무리한 일괄 도입 대신 효과가 큰 영역부터 단계적으로 함께 발전합니다.',
+      },
+    ]}
+  />
+
+  <!-- 연혁 ****************** -->
+  <Steps2
+    title="회사 연혁"
+    isReversed={true}
+    items={[
+      { title: '2018', description: '(주)넥스투 설립', icon: 'tabler:flag' },
+      { title: '2019', description: '사료 생산·출하 자동화 사업 본격화', icon: 'tabler:settings-automation' },
+      { title: '2021', description: '생산 자동화·MES 구축 레퍼런스 확대', icon: 'tabler:building-factory-2' },
+      { title: '2023', description: 'ERP(SAP) 연동 등 데이터 통합 자동화로 확장', icon: 'tabler:plug-connected' },
+    ]}
+  />
+
+  <!-- 오시는 길 ************** -->
+  <Features2
+    title="오시는 길"
+    tagline="Location"
+    columns={1}
+    items={[
+      {
+        title: '본사',
+        description: '서울특별시 송파구 송파대로28길 12, 607호 (가락동, 밀리아나 1차)',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

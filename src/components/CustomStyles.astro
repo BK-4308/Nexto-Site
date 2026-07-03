@@ -1,0 +1,65 @@
+---
+import '@fontsource-variable/inter';
+
+// 'DM Sans'
+// Nunito
+// Dosis
+// Outfit
+// Roboto
+// Literata
+// 'IBM Plex Sans'
+// Karla
+// Poppins
+// 'Fira Sans'
+// 'Libre Franklin'
+// Inconsolata
+// Raleway
+// Oswald
+// 'Space Grotesk'
+// Urbanist
+---
+
+<style is:inline>
+  :root {
+    /* 한글 가독성을 위한 Pretendard 우선, 라틴/숫자는 Inter 폴백 (tailwind.css 에서 @import) */
+    --aw-font-sans: 'Pretendard Variable', 'Inter Variable';
+    --aw-font-serif: 'Pretendard Variable', 'Inter Variable';
+    --aw-font-heading: 'Pretendard Variable', 'Inter Variable';
+
+    /* 넥스투 브랜드 블루 (로고 "T" 컬러 #1C75BC) */
+    --aw-color-primary: rgb(28 117 188);
+    --aw-color-secondary: rgb(21 94 153);
+    --aw-color-accent: rgb(14 58 95);
+
+    --aw-color-text-heading: rgb(11 44 73);
+    --aw-color-text-default: rgb(16 16 16);
+    --aw-color-text-muted: rgb(16 16 16 / 66%);
+    --aw-color-bg-page: rgb(255 255 255);
+
+    --aw-color-bg-page-dark: rgb(11 44 73);
+
+    ::selection {
+      background-color: rgb(168 204 236);
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Pretendard Variable', 'Inter Variable';
+    --aw-font-serif: 'Pretendard Variable', 'Inter Variable';
+    --aw-font-heading: 'Pretendard Variable', 'Inter Variable';
+
+    --aw-color-primary: rgb(78 150 214);
+    --aw-color-secondary: rgb(28 117 188);
+    --aw-color-accent: rgb(124 178 227);
+
+    --aw-color-text-heading: rgb(247, 248, 248);
+    --aw-color-text-default: rgb(229 236 246);
+    --aw-color-text-muted: rgb(229 236 246 / 66%);
+    --aw-color-bg-page: rgb(11 44 73);
+
+    ::selection {
+      background-color: black;
+      color: snow;
+    }
+  }
+</style>

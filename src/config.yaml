@@ -1,0 +1,72 @@
+site:
+  name: 넥스투
+  site: 'https://www.nexto.co.kr'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: ''
+
+# Default SEO metadata
+metadata:
+  title:
+    default: 주식회사 넥스투 — WE ARE ALWAYS NEXT TO YOU
+    template: '%s — 넥스투'
+  description: '넥스투는 산업 자동화, MES, 스마트 팩토리, AI 기술로 고객의 제조 혁신을 함께하는 자동화 시스템 전문 기업입니다.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: 주식회사 넥스투
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: ''
+    site: ''
+    cardType: summary_large_image
+
+i18n:
+  language: ko
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: false # 한글 카테고리 슬러그 생성 이슈 + 소규모 블로그라 비활성화 (필요 시 true)
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: false # 한글 태그 슬러그 생성 이슈 + 소규모 블로그라 비활성화 (필요 시 true)
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

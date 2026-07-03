@@ -1,0 +1,249 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '주식회사 넥스투 — WE ARE ALWAYS NEXT TO YOU',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero ************************* -->
+  <Hero
+    actions={[
+      { variant: 'primary', text: '문의하기', href: '/contact', icon: 'tabler:mail' },
+      { text: '서비스 보기', href: '/services' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1740&q=80',
+      alt: '넥스투 스마트 팩토리 자동화',
+    }}
+  >
+    <Fragment slot="title">
+      제조의 미래, <br />
+      <span class="text-accent dark:text-white">넥스투</span>가 함께합니다
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        넥스투는 <span class="font-semibold">산업 자동화, MES, 스마트 팩토리, AI</span> 기술로
+      </span>
+      고객의 제조 혁신을 함께하는 자동화 시스템 전문 기업입니다.
+    </Fragment>
+  </Hero>
+
+  <!-- Note ************************* -->
+  <Note title="NEXTO" description="WE ARE ALWAYS NEXT TO YOU — 언제나 고객 곁에서" />
+
+  <!-- 핵심 사업 영역 *************** -->
+  <Features
+    id="features"
+    tagline="Core Business"
+    title="핵심 사업 영역"
+    subtitle="자동화부터 AI까지, 제조 혁신에 필요한 기술을 한 곳에서 제공합니다."
+    items={[
+      {
+        title: '산업 자동화',
+        description: '생산 설비의 자동 제어·검사 자동화로 생산성과 품질을 동시에 끌어올립니다.',
+        icon: 'tabler:cpu',
+        callToAction: { text: '자세히 보기', href: '/services/industrial-automation' },
+      },
+      {
+        title: 'MES',
+        description: '생산 실행 시스템으로 현장 데이터를 실시간 수집·관리하여 생산 흐름을 가시화합니다.',
+        icon: 'tabler:layout-dashboard',
+        callToAction: { text: '자세히 보기', href: '/services/mes' },
+      },
+      {
+        title: '스마트 팩토리',
+        description: '설비·공정·데이터를 연결한 지능형 공장 구축을 단계적으로 지원합니다.',
+        icon: 'tabler:building-factory-2',
+        callToAction: { text: '자세히 보기', href: '/services/smart-factory' },
+      },
+      {
+        title: 'AI 솔루션',
+        description: 'AI 기반 검사·예지보전·최적화로 제조 경쟁력을 강화합니다.',
+        icon: 'tabler:sparkles',
+        callToAction: { text: '자세히 보기', href: '/services/ai' },
+      },
+    ]}
+  />
+
+  <!-- 적용 산업 Industries ********* -->
+  <Features
+    id="industries"
+    tagline="Industries"
+    title="적용 분야"
+    subtitle="식품·사료 제조를 비롯해, 공정 자동화가 필요한 다양한 제조 분야에 적용합니다."
+    columns={3}
+    items={[
+      {
+        title: '식품 · 사료 제조',
+        description: '분쇄·배합·가공부터 벌크·포장·출하까지 생산 전 공정 자동화. (핵심 강점)',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: '축산 · 농산업',
+        description: '원료 처리·계량·포장 등 벌크 처리 공정의 자동화.',
+        icon: 'tabler:plant-2',
+      },
+      {
+        title: '화학 · 장치 산업',
+        description: '연속 공정과 배합·계량의 정밀 자동 제어.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: '자동차 · 부품',
+        description: '라인 생산성과 추적성 확보를 위한 설비 자동화·생산관리.',
+        icon: 'tabler:car',
+      },
+      {
+        title: '일반 제조',
+        description: '수작업·가시성 부족 문제를 스마트 팩토리 구축으로 해결.',
+        icon: 'tabler:building-factory',
+      },
+      {
+        title: '그 외 산업',
+        description: '현장 진단을 통해 업종에 맞는 자동화 해법을 제안합니다.',
+        icon: 'tabler:building-warehouse',
+      },
+    ]}
+  />
+
+  <!-- 소개 Content ***************** -->
+  <Content
+    isReversed
+    tagline="Who We Are"
+    title="제조 혁신의 가장 가까운 파트너"
+    items={[
+      {
+        title: '현장 중심 기술',
+        description: '현장에 대한 깊은 이해를 바탕으로 설비·공정에 최적화된 자동화를 설계합니다.',
+      },
+      {
+        title: '진단부터 운영까지',
+        description: '도입 진단, 구축, 운영·유지보수까지 전 과정을 함께합니다.',
+      },
+      {
+        title: '데이터·AI 역량',
+        description: '자동화에 데이터·AI를 더해 지속 가능한 제조 경쟁력을 만듭니다.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2070&q=80',
+      alt: '자동화 현장',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">기술로 현장의 문제를 해결합니다</h3>
+      검증된 자동화·데이터·AI 기술로 고객의 생산성과 품질을 끌어올립니다.
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- 도입 단계 Steps ************** -->
+  <Steps
+    title="스마트 팩토리, 단계적으로 함께 만듭니다."
+    items={[
+      {
+        title: '1단계: <span class="font-medium">진단</span>',
+        description: '현재 자동화·데이터 수준을 진단하고 우선순위를 정합니다.',
+        icon: 'tabler:search',
+      },
+      {
+        title: '2단계: <span class="font-medium">자동화</span>',
+        description: '투자 대비 효과가 큰 핵심 공정부터 자동화를 적용합니다.',
+        icon: 'tabler:settings-automation',
+      },
+      {
+        title: '3단계: <span class="font-medium">데이터·지능화</span>',
+        description: '설비·공정 데이터를 수집·가시화하고 AI로 고도화합니다.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: '완성!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&w=987&q=80',
+      alt: '스마트 팩토리',
+    }}
+  />
+
+  <!-- 신뢰 지표 Stats ************** -->
+  <Stats
+    stats={[
+      { title: '년 자동화 노하우', amount: '10+' },
+      { title: '프로젝트 수행', amount: '100+' },
+      { title: '핵심 기술 분야', amount: '4' },
+      { title: '고객사', amount: '15' },
+    ]}
+  />
+
+  <!-- 구축 사례 Case Studies ******* -->
+  <Features
+    id="cases"
+    tagline="Case Studies"
+    title="구축 사례"
+    subtitle="사료 제조 현장의 생산·출하 자동화를 넥스투가 구축·운영하고 있습니다."
+    columns={2}
+    items={[
+      {
+        title: '대한사료 — 생산/출하 자동화',
+        description:
+          '사료 생산(분쇄·배합·펠렛·후레이크) 및 출하(벌크·포장) 전 공정 자동화 구축·운영.',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: '고려산업 — 생산/출하 자동화',
+        description:
+          '사료 생산(분쇄·배합·펠렛·후레이크) 및 출하(벌크·포장·계근) 자동화 구축·운영.',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: '부국사료 — 생산/출하 자동화',
+        description:
+          '사료 생산(분쇄·배합·펠렛·후레이크) 및 출하(벌크·포장·계근) 자동화 구축·운영.',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: '하림 — 생산/출하 자동화 + SAP(ERP) 연동',
+        description:
+          '사료 생산(원료·분쇄·배합·펠렛·후레이크) 및 출하(벌크·포장·계근) 자동화 구축·운영. SAP(ERP)와 원료·생산·출하·재고 데이터 인터페이스 구축.',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+  />
+
+  <!-- 최신 소식 ******************** -->
+  <BlogLatestPosts title="넥스투의 새로운 소식" information={`산업 자동화, 스마트 팩토리, AI 분야의 소식과 인사이트를 전합니다.`} />
+
+  <!-- CTA ************************** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '문의하기',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">프로젝트를 검토 중이신가요?</Fragment>
+    <Fragment slot="subtitle">
+      자동화·스마트팩토리·AI 도입, 넥스투가 함께 고민하겠습니다.
+    </Fragment>
+  </CallToAction>
+</Layout>

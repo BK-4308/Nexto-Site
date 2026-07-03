@@ -1,0 +1,84 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { services } from '~/data/services';
+
+const metadata = {
+  title: '제품·서비스',
+};
+
+// 서비스 데이터(단일 소스)를 카드로 변환 — 각 카드는 상세 페이지로 링크
+const serviceItems = services.map((service) => ({
+  title: service.title,
+  description: service.summary,
+  icon: service.icon,
+  callToAction: { text: '자세히 보기', href: `/services/${service.slug}` },
+}));
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero ******************* -->
+  <Hero
+    tagline="Services"
+    title="현장에 맞춘 자동화 솔루션"
+    subtitle="산업 자동화, MES, 스마트 팩토리, AI — 진단부터 구축·운영까지 넥스투가 함께합니다."
+    actions={[{ variant: 'primary', text: '문의하기', href: '/contact', icon: 'tabler:mail' }]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1740&q=80',
+      alt: '넥스투 서비스',
+    }}
+  />
+
+  <!-- 서비스 목록 (데이터 주도, 각 카드 → 상세 페이지) ************** -->
+  <Features2
+    title="제품·서비스"
+    subtitle="제조 혁신에 필요한 핵심 기술을 제공합니다. 각 서비스의 상세 내용을 확인하세요."
+    columns={2}
+    items={serviceItems}
+  />
+
+  <!-- 강점 Content **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: '현장 맞춤 설계',
+        description: '설비·공정 특성에 맞춘 최적의 자동화를 설계합니다.',
+        icon: 'tabler:wand',
+      },
+      {
+        title: '검증된 기술',
+        description: '실증 가능한 기술만 적용해 안정적으로 운영됩니다.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: '데이터·AI 연계',
+        description: '자동화에 데이터·AI를 더해 효과를 극대화합니다.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: '단계적 도입',
+        description: '효과가 큰 영역부터 단계적으로 확장합니다.',
+        icon: 'tabler:stairs-up',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&w=870&q=80',
+      alt: '자동화 강점',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">왜 넥스투인가</h3>
+    </Fragment>
+  </Content>
+
+  <!-- CTA *********** -->
+  <CallToAction
+    actions={[{ variant: 'primary', text: '문의하기', href: '/contact', icon: 'tabler:mail' }]}
+    title="도입을 검토 중이신가요?"
+    subtitle="현 수준 진단부터 구축까지, 넥스투가 함께 고민하겠습니다."
+  />
+</Layout>

@@ -4,6 +4,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
+import NextoHero from '~/components/nexto/Hero.astro';
+import NextoServices from '~/components/nexto/Services.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -17,66 +19,11 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero ************************* -->
-  <Hero
-    actions={[
-      { variant: 'primary', text: '문의하기', href: '/contact', icon: 'tabler:mail' },
-      { text: '서비스 보기', href: '/services' },
-    ]}
-    image={{
-      src: '~/assets/images/automation-line.jpg',
-      alt: '넥스투 스마트 팩토리 자동화',
-    }}
-  >
-    <Fragment slot="title">
-      제조의 미래, <br />
-      <span class="text-accent dark:text-white">넥스투</span>가 함께합니다
-    </Fragment>
+  <!-- Hero (커스텀 프리미엄) ******** -->
+  <NextoHero />
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        넥스투는 <span class="font-semibold">산업 자동화, MES, 스마트 팩토리, AI</span> 기술로
-      </span>
-      고객의 제조 혁신을 함께하는 자동화 시스템 전문 기업입니다.
-    </Fragment>
-  </Hero>
-
-  <!-- Note ************************* -->
-  <Note title="NEXTO" description="WE ARE ALWAYS NEXT TO YOU — 언제나 고객 곁에서" />
-
-  <!-- 핵심 사업 영역 *************** -->
-  <Features
-    id="features"
-    tagline="Core Business"
-    title="핵심 사업 영역"
-    subtitle="자동화부터 AI까지, 제조 혁신에 필요한 기술을 한 곳에서 제공합니다."
-    items={[
-      {
-        title: '산업 자동화',
-        description: '생산 설비의 자동 제어·검사 자동화로 생산성과 품질을 동시에 끌어올립니다.',
-        icon: 'tabler:cpu',
-        callToAction: { text: '자세히 보기', href: '/services/industrial-automation' },
-      },
-      {
-        title: 'MES',
-        description: '생산 실행 시스템으로 현장 데이터를 실시간 수집·관리하여 생산 흐름을 가시화합니다.',
-        icon: 'tabler:layout-dashboard',
-        callToAction: { text: '자세히 보기', href: '/services/mes' },
-      },
-      {
-        title: '스마트 팩토리',
-        description: '설비·공정·데이터를 연결한 지능형 공장 구축을 단계적으로 지원합니다.',
-        icon: 'tabler:building-factory-2',
-        callToAction: { text: '자세히 보기', href: '/services/smart-factory' },
-      },
-      {
-        title: 'AI 솔루션',
-        description: 'AI 기반 검사·예지보전·최적화로 제조 경쟁력을 강화합니다.',
-        icon: 'tabler:sparkles',
-        callToAction: { text: '자세히 보기', href: '/services/ai' },
-      },
-    ]}
-  />
+  <!-- 핵심 사업 영역 (커스텀 카드) *** -->
+  <NextoServices />
 
   <!-- 적용 산업 Industries ********* -->
   <Features

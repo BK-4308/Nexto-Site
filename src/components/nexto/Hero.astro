@@ -1,0 +1,127 @@
+---
+/**
+ * 넥스투 커스텀 Hero — 모던·담대·기술기업 룩
+ * 다크 그라디언트 배경 + 미세 그리드/글로우 + 굵은 타이포 + 프레임 이미지 + 플로팅 스탯.
+ * AstroWind 기본 Hero 대체용(홈 전용).
+ */
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import heroImg from '~/assets/images/automation-line.jpg';
+
+// 히어로 하단 신뢰 배지(핵심 사업 4종)
+const pills = ['산업 자동화', 'MES', '스마트 팩토리', 'AI'];
+---
+
+<section class="relative isolate overflow-hidden bg-[#0a2540] text-white">
+  <!-- 배경: 그라디언트 -->
+  <div
+    class="absolute inset-0 -z-20"
+    style="background:linear-gradient(135deg,#0a2038 0%,#0d2f4d 45%,#124169 100%)"
+  >
+  </div>
+  <!-- 배경: 미세 그리드 (상단 페이드) -->
+  <div
+    class="absolute inset-0 -z-10 opacity-[0.18]"
+    style="background-image:linear-gradient(to right,#ffffff26 1px,transparent 1px),linear-gradient(to bottom,#ffffff26 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 35%,transparent 100%)"
+  >
+  </div>
+  <!-- 배경: 블루 글로우 -->
+  <div class="absolute -top-40 -right-24 -z-10 h-[520px] w-[520px] rounded-full bg-primary/25 blur-[130px]"></div>
+  <div class="absolute -bottom-48 -left-32 -z-10 h-[460px] w-[460px] rounded-full bg-blue-400/10 blur-[120px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8 py-20 md:py-28 lg:py-32">
+    <div class="grid items-center gap-14 lg:grid-cols-12">
+      <!-- 좌: 카피 -->
+      <div class="lg:col-span-6">
+        <!-- 아이라인 배지 -->
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-blue-100 backdrop-blur"
+        >
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-300 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-blue-300"></span>
+          </span>
+          WE ARE ALWAYS NEXT TO YOU
+        </div>
+
+        <!-- 헤드라인 -->
+        <h1 class="mt-6 font-heading text-4xl font-extrabold leading-[1.08] tracking-tight break-keep sm:text-5xl lg:text-6xl">
+          제조의 미래,<br />
+          <span
+            class="bg-gradient-to-r from-blue-300 via-sky-200 to-white bg-clip-text text-transparent"
+          >넥스투</span>가 함께합니다
+        </h1>
+
+        <!-- 서브 -->
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-blue-100/80 break-keep">
+          <span class="font-semibold text-white">산업 자동화 · MES · 스마트 팩토리 · AI</span> —
+          제조 현장의 생산성과 품질을 끌어올리는 자동화 시스템 전문 기업.
+        </p>
+
+        <!-- CTA -->
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a
+            href="/contact"
+            class="group inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 hover:bg-secondary hover:shadow-primary/50"
+          >
+            <Icon name="tabler:mail" class="h-5 w-5" />
+            문의하기
+            <Icon name="tabler:arrow-right" class="h-4 w-4 transition group-hover:translate-x-1" />
+          </a>
+          <a
+            href="/services"
+            class="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white backdrop-blur transition hover:bg-white/10"
+          >
+            서비스 보기
+          </a>
+        </div>
+
+        <!-- 신뢰 배지 -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2">
+          {
+            pills.map((p) => (
+              <span class="inline-flex items-center gap-1.5 text-sm text-blue-100/70">
+                <Icon name="tabler:circle-check-filled" class="h-4 w-4 text-blue-300" />
+                {p}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 우: 프레임 이미지 + 플로팅 스탯 -->
+      <div class="lg:col-span-6">
+        <div class="relative">
+          <!-- 이미지 뒤 글로우 -->
+          <div class="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-primary/30 to-sky-300/20 blur-2xl"></div>
+          <div class="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl">
+            <Image
+              src={heroImg}
+              alt="넥스투 스마트 팩토리 자동화 라인"
+              widths={[480, 800, 1200]}
+              sizes="(max-width: 1024px) 100vw, 600px"
+              loading="eager"
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <!-- 플로팅 스탯 카드 -->
+          <div
+            class="absolute -bottom-6 -left-4 sm:left-6 flex items-center gap-4 rounded-2xl border border-white/15 bg-[#0c2a45]/80 px-5 py-4 shadow-xl backdrop-blur-md"
+          >
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-blue-200">
+              <Icon name="tabler:building-factory-2" class="h-6 w-6" />
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold leading-none text-white">100<span class="text-blue-300">+</span></div>
+              <div class="mt-1 text-xs text-blue-100/70">자동화 프로젝트 수행</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 페이드 (다음 섹션과 자연스러운 전환) -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#0a2540]/0"></div>
+</section>

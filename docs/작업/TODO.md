@@ -15,6 +15,20 @@
 - ⚠️ **CI 워크플로 커밋 보류**: keychain PAT에 `workflow` 스코프 없어 `.github/workflows/actions.yaml` push 거부됨 → `.gitignore`에 `.github/workflows/` 추가하고 커밋에서 제외(**파일은 로컬 유지**). 재추가하려면: (a) PAT에 workflow 스코프 부여 후 `.gitignore`에서 해당 줄 제거→커밋, 또는 (b) GitHub 웹UI에서 직접 워크플로 추가(웹은 스코프 무관). 배포는 Cloudflare Pages 자체 빌드라 기능 영향 없음.
 - ℹ️ `.claude/settings.local.json`도 머신 로컬 설정이라 `.gitignore` 처리(커밋 제외).
 
+---
+
+## 🎨 디자인 전면 개편 (진행 중, 2026-07-03) — 최우선
+
+> **방향 재확정**: 기존 AstroWind 기본 룩 유지가 아니라, **커스텀 프리미엄 리디자인(모던·담대·기술기업)**. 유료 템플릿 복제 없이 새 디자인 언어로 창작. 브랜드 블루(#1C75BC)·다크 히어로·굵은 타이포·호버 인터랙션.
+> **진행 방식**: 홈 상단부터 만들어 스크린샷/라이브로 확인 → 승인 후 전 섹션·전 페이지 확산(오해 재발 방지). 새 커스텀 컴포넌트는 `src/components/nexto/`.
+
+- [x] 홈 Hero 커스텀 재제작 (`nexto/Hero.astro`) — 다크 그라디언트+그리드+글로우, 그라디언트 헤드라인, 프레임 이미지+플로팅 스탯, 데스크톱/모바일 검증
+- [x] 홈 "핵심 사업 영역" 카드 리디자인 (`nexto/Services.astro`) — 아이콘 타일·호버 액센트바·카드 리프트
+- [x] 방향 사용자 승인 (2026-07-03)
+- [ ] 홈 나머지 섹션 리디자인: 적용 분야(Industries) / 소개(Who We Are) / 도입 단계(Steps→타임라인) / 통계(Stats 밴드) / 구축 사례(Case Studies) / 최신 소식 / CTA
+- [ ] 전 페이지 확산: 회사소개 · 서비스(목록+상세) · 문의 · 블로그 — 헤더/푸터/공통 요소 톤 통일
+- [ ] 전 브레이크포인트 재점검(리디자인 후 Playwright 재캡처)
+
 **그다음 남은 작업**
 - [x] **무료 스톡 이미지 교체 완료 (2026-07-03)** — Unsplash 임시 URL 전량 제거 → **산업/플랜트 일반** 이미지 8종을 `src/assets/images/`에 로컬화(Astro webp 최적화). 홈/회사소개/서비스 Hero·콘텐츠·서비스4종·블로그2건 매핑, 빌드 검증(12페이지). ⚠️ 후속: 각 이미지 라이선스/출처(Unsplash 무료 라이선스) 최종 확인.
 - [x] **OG 이미지·favicon 넥스투용 제작 완료 (2026-07-03)** — favicon.svg/ico/apple-touch-icon "N" 모노그램(브랜드 블루 #1C75BC), Safari mask-icon 색상 교정, OG 이미지 `og-nexto.png`(1200×630, NEXTO 워드마크+태그라인+서비스) 제작 후 `config.yaml` openGraph 반영. AstroWind 데모 이미지(default/hero-image/app-store/google-play) 정리. 빌드 검증(12페이지).

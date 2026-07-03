@@ -56,7 +56,7 @@ export const services: ServiceDetail[] = [
       '설비 인터페이스·라인 통합',
     ],
     effects: ['생산성 향상', '품질 편차 감소', '현장 안전 강화', '인력 의존도 완화'],
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1740&q=80',
+    image: '~/assets/images/automation-line.jpg',
   },
   {
     slug: 'mes',
@@ -80,7 +80,7 @@ export const services: ServiceDetail[] = [
       'ERP(SAP 등) 데이터 인터페이스',
     ],
     effects: ['생산 가시성 확보', '불량 원인 추적 시간 단축', '데이터 기반 의사결정', '관리 비용 절감'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1740&q=80',
+    image: '~/assets/images/factory-machines.jpg',
   },
   {
     slug: 'smart-factory',
@@ -103,7 +103,7 @@ export const services: ServiceDetail[] = [
       '자동화·MES·AI 연계',
     ],
     effects: ['단계적 리스크 관리', '투자 대비 효과 극대화', '일관된 시스템 아키텍처', '지속 확장 가능'],
-    image: 'https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&w=1740&q=80',
+    image: '~/assets/images/machinery.jpg',
   },
   {
     slug: 'ai',
@@ -120,7 +120,7 @@ export const services: ServiceDetail[] = [
     ],
     scope: ['설비 이상 감지', '예지보전', '품질 예측', '공정 변수 최적화'],
     effects: ['비계획 정지 감소', '불량률 개선', '숙련 노하우의 데이터화', '검사 정확도 향상'],
-    image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1740&q=80',
+    image: '~/assets/images/industrial-pipes.jpg',
   },
 ];
 

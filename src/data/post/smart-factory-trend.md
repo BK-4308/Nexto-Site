@@ -3,7 +3,7 @@ publishDate: 2026-06-10T00:00:00Z
 author: 넥스투
 title: 스마트 팩토리, 어디서부터 시작해야 할까
 excerpt: 스마트 팩토리 도입을 고민하는 제조 기업을 위한 단계적 접근 방법을 정리했습니다.
-image: https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&w=2070&q=80
+image: ~/assets/images/large-machine.jpg
 category: 인사이트
 tags:
   - 스마트팩토리

@@ -3,7 +3,7 @@ publishDate: 2026-06-18T00:00:00Z
 author: 넥스투
 title: 넥스투 공식 홈페이지를 오픈했습니다
 excerpt: 넥스투의 새로운 공식 홈페이지가 문을 열었습니다. 앞으로 다양한 소식을 전하겠습니다.
-image: https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=2070&q=80
+image: ~/assets/images/factory-interior.jpg
 category: 공지
 tags:
   - 공지

@@ -1,7 +1,7 @@
 # TODO — (주)넥스투 홈페이지
 
 > 살아있는 작업 추적. 완료 항목은 `[x]` 체크, 종료된 Phase는 `완료_이력.md`로 이관.
-> 최종 갱신: 2026-07-03
+> 최종 갱신: 2026-07-03 (원격 push 완료)
 
 ---
 
@@ -10,18 +10,13 @@
 **현재 상태**
 - 배포처 확정: **Cloudflare Pages** / 문의 폼: **Web3Forms**(env `PUBLIC_WEB3FORMS_KEY`). 상세 → [06_배포.md](../설계/06_배포.md)
 - **git init 완료(`main` 브랜치)**. `.env` 등 민감파일 없음 확인. `.gitignore` OK.
-- ⛔ 아직 안 됨: **원격 연결·커밋·push** (세션 중 권한 확인창 이슈로 중단 → 재시작으로 해소)
+- [x] **원격 연결·첫 커밋·push 완료 (2026-07-03)** — HTTPS+PAT(osxkeychain, user BK-4308)로 push. `origin/main` 추적 설정됨.
 - GitHub 저장소: `https://github.com/BK-4308/Nexto-Site.git`
-
-**재시작 직후 실행할 것 (git 연결·push)**
-1. `git remote add origin https://github.com/BK-4308/Nexto-Site.git`
-2. `git add -A` → `git commit` (첫 커밋)
-3. `git push -u origin main`
-   - ⚠️ push 인증 방식 사용자에게 확인 필요: `gh` 로그인 / SSH / PAT 중 무엇인지
-   - 원격에 초기 커밋(README 등) 있으면 `git pull --rebase origin main` 후 push
+- ⚠️ **CI 워크플로 커밋 보류**: keychain PAT에 `workflow` 스코프 없어 `.github/workflows/actions.yaml` push 거부됨 → `.gitignore`에 `.github/workflows/` 추가하고 커밋에서 제외(**파일은 로컬 유지**). 재추가하려면: (a) PAT에 workflow 스코프 부여 후 `.gitignore`에서 해당 줄 제거→커밋, 또는 (b) GitHub 웹UI에서 직접 워크플로 추가(웹은 스코프 무관). 배포는 Cloudflare Pages 자체 빌드라 기능 영향 없음.
+- ℹ️ `.claude/settings.local.json`도 머신 로컬 설정이라 `.gitignore` 처리(커밋 제외).
 
 **그다음 남은 작업**
-- 무료 스톡 이미지 교체(사료·제조 도메인, Hero/서비스/회사소개 — 현재 Unsplash 임시 URL) → `src/assets/`
+- [x] **무료 스톡 이미지 교체 완료 (2026-07-03)** — Unsplash 임시 URL 전량 제거 → **산업/플랜트 일반** 이미지 8종을 `src/assets/images/`에 로컬화(Astro webp 최적화). 홈/회사소개/서비스 Hero·콘텐츠·서비스4종·블로그2건 매핑, 빌드 검증(12페이지). ⚠️ 후속: 각 이미지 라이선스/출처(Unsplash 무료 라이선스) 최종 확인.
 - OG 이미지·favicon 넥스투용 제작
 - (사용자) Web3Forms 키 발급 · Cloudflare Pages 연결 · nexto.co.kr 도메인(www 여부) → `config.yaml` site URL 반영
 - (선택) 연혁 마일스톤 실제 연도·내용 확정(현재 2019/2021/2023 임시)
@@ -54,7 +49,7 @@
 - [x] 문의 페이지: 폼 전송 동작(문의 유형 select + 회사명 + Mobile 번호), 빌드/HTML 검증
 - [x] 배포처 확정: **Cloudflare Pages** → 폼 **Web3Forms**로 교체(환경변수 `PUBLIC_WEB3FORMS_KEY`), 배포 가이드 [06_배포.md](../설계/06_배포.md)
 - [ ] (사용자) Web3Forms 키 발급 + GitHub 저장소 + Cloudflare Pages 연결 + nexto.co.kr 도메인 (06_배포.md §6 체크리스트)
-- [ ] 무료 스톡 이미지 선별·삽입 (`src/assets/images/`)
+- [x] 무료 스톡 이미지 선별·삽입 (`src/assets/images/`) — 산업/플랜트 일반 8종 로컬화, 빌드 검증(2026-07-03)
 - [ ] 플레이스홀더(`[확인 필요]`) 실데이터 교체
 - [ ] 빌드 검증
 

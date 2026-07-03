@@ -53,7 +53,7 @@
 - [x] 플레이스홀더(`[확인 필요]`) 점검 — 실콘텐츠용 플레이스홀더 없음 확인(폼 field placeholder·프레임워크 주석만 존재), 연락처 실값 확인 (2026-07-03)
 - [x] 빌드 검증 — 12페이지 정상 (2026-07-03)
 - [x] **정적 반응형·접근성 감사 + 개선 (2026-07-03)** — theme-color(브랜드/다크), 본문 바로가기(skip-to-content) 링크, 연락처 죽은 링크(`href="#"` 5곳) 제거. 이미지 반응형(w-full/width:100%)·viewport·모바일 메뉴·alt·폼 라벨·heading 계층 정상 확인.
-- [ ] **반응형 실브라우저 시각 점검** — 자동화 도구(playwright) 미설치. 설치 후 스크린샷 or 사용자 수동 확인 필요 (특히 회사소개 Hero의 세로형 plant-structure 이미지 레이아웃)
+- [x] **반응형 실브라우저 시각 점검 완료 (2026-07-03)** — Playwright(devDep)+chromium로 5개 페이지×모바일/태블릿/데스크톱 스크린샷 캡처·점검. 전 브레이크포인트 레이아웃 정상, 깨진 이미지 0. 세로형 plant-storage Hero도 object-cover로 정상. **수정**: 홈 Hero 한글 제목 중간 줄바꿈(고아 '다') → `break-keep`(word-break:keep-all) 적용. ℹ️ playwright는 dev 전용(배포 무관), 불필요 시 `npm rm -D playwright`.
 
 ---
 
@@ -71,7 +71,7 @@
 - [x] OG 이미지·favicon 넥스투용 제작 — "N" 모노그램 파비콘 + og-nexto.png(2026-07-03)
 - [ ] 배포 도메인 확정 후 `config.yaml` site URL 반영
 - [x] 접근성 정적 감사 + 개선(theme-color/skip-link/죽은 링크 제거), 반응형 정적 확인 (2026-07-03)
-- [ ] 반응형 실제 브라우저 시각 점검 (playwright 설치 or 수동)
+- [x] 반응형 실제 브라우저 시각 점검 — Playwright 스크린샷, 전 브레이크포인트 정상 + 한글 제목 break-keep 적용 (2026-07-03)
 
 ---
 
@@ -108,7 +108,7 @@
 - [ ] OG 이미지(og-image.png) 제작 — 현재 경로만 지정됨
 - [ ] 실제 콘텐츠 교체(연혁/숫자/서비스 상세 실데이터)
 - [x] 접근성 정적 감사 + 개선(theme-color/skip-link/죽은 링크 제거), 반응형 정적 확인 (2026-07-03)
-- [ ] 반응형 실제 브라우저 시각 점검 (playwright 설치 or 수동)
+- [x] 반응형 실제 브라우저 시각 점검 — Playwright 스크린샷, 전 브레이크포인트 정상 + 한글 제목 break-keep 적용 (2026-07-03)
 - [ ] 배포 도메인 확정 후 site URL 반영
 
 ## 추후: P4 (별도 논의)
